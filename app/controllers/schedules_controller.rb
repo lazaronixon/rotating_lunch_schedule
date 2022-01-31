@@ -2,7 +2,7 @@ class SchedulesController < ApplicationController
   before_action :set_schedule, only: %i[ show edit update destroy ]
 
   def index
-    @schedules = Schedule.all
+    @schedules = Schedule.chronologically
   end
 
   def show
