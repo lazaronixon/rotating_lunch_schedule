@@ -1,0 +1,16 @@
+<h1>Meals</h1>
+
+<div id="meals">
+  <% @meals.each do |meal| %>
+    <%= render meal %>
+    <p>
+      <%= link_to "Show this meal", meal, class: "btn btn--secondary" %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New meal", new_meal_path, class: "btn btn--primary" %>
+
+<div class="push-md--top">
+  <%= link_to "Back to schedules", schedules_path %>
+</div>

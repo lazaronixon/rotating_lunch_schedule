@@ -11,6 +11,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <main class="container push-2xl--top">
+      <%= render "flash_notice" %>
+      <%= yield %>
+    </main>
   </body>
 </html>
