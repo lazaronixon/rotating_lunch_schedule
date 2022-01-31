@@ -14,7 +14,7 @@ class SchedulesTest < ApplicationSystemTestCase
     visit schedules_url
     click_on "New schedule"
 
-    fill_in "Day", with: @schedule.day
+    fill_in "Served at", with: @schedule.served_at
     fill_in "Meal", with: @schedule.meal_id
     click_on "Create Schedule"
 
@@ -26,7 +26,7 @@ class SchedulesTest < ApplicationSystemTestCase
     visit schedule_url(@schedule)
     click_on "Edit this schedule", match: :first
 
-    fill_in "Day", with: @schedule.day
+    fill_in "Served at", with: @schedule.served_at
     fill_in "Meal", with: @schedule.meal_id
     click_on "Update Schedule"
 

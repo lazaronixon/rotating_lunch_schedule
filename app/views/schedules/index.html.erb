@@ -1,12 +1,12 @@
 <h1>Schedules</h1>
 
 <div id="schedules">
-  <% @schedules.group_by {|s| l(s.day, format: "%W")}.each do |week, schedules| %>
+  <% @schedules.group_by {|s| l(s.served_at, format: "%W")}.each do |week, schedules| %>
     <ul>
       <li>Week <%= week %></li>
 
       <% schedules.each do |schedule| %>
-        <li><%= link_to "#{l(schedule.day, format: "%A")} - #{schedule.meal.title}", schedule %></li>
+        <li><%= link_to "#{l(schedule.served_at, format: "%A")} - #{schedule.meal.title}", schedule %></li>
       <% end %>
     </ul>
   <% end %>

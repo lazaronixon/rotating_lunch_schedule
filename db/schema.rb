@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_01_31_211824) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.date "day", null: false
+    t.date "served_at", null: false
     t.bigint "meal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
