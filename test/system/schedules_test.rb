@@ -15,7 +15,7 @@ class SchedulesTest < ApplicationSystemTestCase
     click_on "New schedule"
 
     fill_in "Served at", with: @schedule.served_at
-    fill_in "Meal", with: @schedule.meal_id
+    select @schedule.meal.title, from: "schedule_meal_id"
     click_on "Create Schedule"
 
     assert_text "Schedule was successfully created"
@@ -27,7 +27,7 @@ class SchedulesTest < ApplicationSystemTestCase
     click_on "Edit this schedule", match: :first
 
     fill_in "Served at", with: @schedule.served_at
-    fill_in "Meal", with: @schedule.meal_id
+    select @schedule.meal.title, from: "schedule_meal_id"
     click_on "Update Schedule"
 
     assert_text "Schedule was successfully updated"
