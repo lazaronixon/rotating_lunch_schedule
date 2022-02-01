@@ -18,19 +18,13 @@ class SchedulesController < ApplicationController
   def create
     @schedule = Schedule.new(schedule_params)
 
-    if @schedule.save
-      redirect_to @schedule, notice: "Schedule was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @schedule.save!
+    redirect_to @schedule, notice: "Schedule was successfully created."
   end
 
   def update
-    if @schedule.update(schedule_params)
-      redirect_to @schedule, notice: "Schedule was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    @schedule.update!(schedule_params)
+    redirect_to @schedule, notice: "Schedule was successfully updated."
   end
 
   def destroy

@@ -18,19 +18,13 @@ class MealsController < ApplicationController
   def create
     @meal = Meal.new(meal_params)
 
-    if @meal.save
-      redirect_to @meal, notice: "Meal was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @meal.save!
+    redirect_to @meal, notice: "Meal was successfully created."
   end
 
   def update
-    if @meal.update(meal_params)
-      redirect_to @meal, notice: "Meal was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    @meal.update!(meal_params)
+    redirect_to @meal, notice: "Meal was successfully updated."
   end
 
   def destroy
