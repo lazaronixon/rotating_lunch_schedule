@@ -8,10 +8,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <link href="//cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css" rel="stylesheet" />
+    <script src="//cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
   </head>
 
   <body>
-    <main class="container push-2xl--top">
+    <main class="container push-lg--top">
       <%= render "flash_notice" %>
       <%= yield %>
     </main>

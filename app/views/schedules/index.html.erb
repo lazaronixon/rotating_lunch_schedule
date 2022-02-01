@@ -1,8 +1,12 @@
 <h1>Schedules</h1>
 
 <div id="schedules">
-  <% @schedules.group_by {|s| l(s.served_at, format: "%W")}.each do |week, schedules| %>
-    <ul>
+  <div class="push-md--bottom">
+    <div data-controller="calendar" data-calendar-events-value="<%= @schedules.map(&:to_event).to_json %>"></div>
+  </div>
+
+  <% @schedules.group_by { |s| l(s.served_at, format: "%W") }.each do |week, schedules| %>
+    <ul class="list--unindented">
       <li>Week <%= week %></li>
 
       <% schedules.each do |schedule| %>
