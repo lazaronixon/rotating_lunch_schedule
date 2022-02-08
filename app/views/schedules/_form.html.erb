@@ -1,11 +1,11 @@
 <%= form_with(model: schedule) do |form| %>
   <div>
-    <%= form.label :served_at, required: true %>
-    <%= form.date_field :served_at, required: true, class: "input" %>
+    <%= form.label :served_at, class: "u-display-b txt--bold", required: true %>
+    <%= form.date_field :served_at, required: true, class: "input", autofocus: true %>
   </div>
 
   <div>
-    <%= form.label :meal_id %>
+    <%= form.label :meal_id, class: "u-display-b txt--bold" %>
     <%= form.collection_select :meal_id,  Meal.alphabetically, :id, :title, { prompt: "Select a meal" }, { required: true, class: "input input--select" } %>
   </div>
 

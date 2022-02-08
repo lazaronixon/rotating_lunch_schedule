@@ -3,8 +3,8 @@
 <div id="meals">
   <% @meals.each do |meal| %>
     <%= render meal %>
-    <p>
-      <%= link_to "Show this meal", meal, class: "btn btn--secondary" %>
+    <p class="pull-md--top">
+      <%= link_to "Show this meal", meal %>
     </p>
   <% end %>
 </div>

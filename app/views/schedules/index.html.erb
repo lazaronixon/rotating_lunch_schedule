@@ -1,5 +1,9 @@
 <h1>Schedules</h1>
 
+<%= link_to "New schedule", new_schedule_path, class: "btn btn--primary" %>
+
+<hr>
+
 <div id="schedules">
   <div class="push-md--bottom">
     <div data-controller="calendar" data-calendar-events-value="<%= @schedules.map(&:to_event).to_json %>"></div>
@@ -15,5 +19,3 @@
     </ul>
   <% end %>
 </div>
-
-<%= link_to "New schedule", new_schedule_path, class: "btn btn--primary" %>

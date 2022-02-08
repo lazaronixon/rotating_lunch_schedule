@@ -1,7 +1,7 @@
 <%= form_with(model: meal) do |form| %>
   <div>
-    <%= form.label :title%>
-    <%= form.text_field :title, required: true, class: "input" %>
+    <%= form.label :title, class: "u-display-b txt--bold" %>
+    <%= form.text_field :title, required: true, class: "input", autofocus: true %>
   </div>
 
   <div>

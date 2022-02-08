@@ -1,9 +1,9 @@
 @import "sass-zero/variables";
 
 .flash-notice {
-  padding: $size-4 $size-8;
+  padding: $size-3 $size-4;
   background-color: $gray-200;
   border-radius: $rounded;
   box-shadow: $shadow-md;
-  margin-bottom: $size-16;
+  margin-bottom: $size-8;
 }
